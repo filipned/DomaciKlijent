@@ -23,6 +23,7 @@ import java.io.PrintStream;
 import java.net.ConnectException;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import javax.swing.ScrollPaneConstants;
 
 
 public class KlijentDigitron extends JFrame {
@@ -65,6 +66,7 @@ public class KlijentDigitron extends JFrame {
 	private String odgovorKontrola;
 	private String podaciZaServer;
 	private String odgovorOdServera;
+	private JButton button_11;
 	
 	/**
 	 * Launch the application.
@@ -94,8 +96,8 @@ public class KlijentDigitron extends JFrame {
 		contentPane.setLayout(null);
 		contentPane.add(getLblIzaberiteOperaciju());
 		contentPane.add(getLblNewLabel());
-		contentPane.add(getPanel());
 		contentPane.add(getBtnSabiranje());
+		contentPane.add(getPanel());
 		contentPane.add(getBtnOduzimanje());
 		contentPane.add(getBtnMnozenje());
 		contentPane.add(getBtnDijeljenje());
@@ -115,6 +117,9 @@ public class KlijentDigitron extends JFrame {
 		contentPane.add(getLabelRezultat());
 		contentPane.add(getButton_9());
 		contentPane.add(getButton_10());
+		
+		button_9.setEnabled(false);
+		contentPane.add(getButton_11());
 		
 		otvoriVezuKontrole();
 	}
@@ -148,21 +153,23 @@ public class KlijentDigitron extends JFrame {
 			panel = new JPanel();
 			panel.setBounds(359, 49, 138, 238);
 			panel.setLayout(null);
-			panel.add(getScrollPane());
 			panel.add(getTextAreaStatus());
+			panel.add(getScrollPane());
 		}
 		return panel;
 	}
 	private JScrollPane getScrollPane() {
 		if (scrollPane == null) {
 			scrollPane = new JScrollPane();
-			scrollPane.setBounds(0, 240, 138, -236);
+			scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_ALWAYS);
+			scrollPane.setBounds(0, 235, 138, -471);
 		}
 		return scrollPane;
 	}
 	private JTextArea getTextAreaStatus() {
 		if (textAreaStatus == null) {
 			textAreaStatus = new JTextArea();
+			textAreaStatus.setEditable(false);
 			textAreaStatus.setBounds(0, 0, 138, 255);
 		}
 		return textAreaStatus;
@@ -306,6 +313,8 @@ public class KlijentDigitron extends JFrame {
 			btnNewButton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					textFieldBrojevi.setText(textFieldBrojevi.getText() + "7");
+					button_9.setEnabled(true);
+					button_11.setEnabled(true);
 				}
 			});
 			btnNewButton.setBounds(10, 100, 45, 31);
@@ -318,6 +327,8 @@ public class KlijentDigitron extends JFrame {
 			button.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					textFieldBrojevi.setText(textFieldBrojevi.getText() + "8");
+					button_9.setEnabled(true);
+					button_11.setEnabled(true);
 				}
 			});
 			button.setBounds(64, 100, 45, 31);
@@ -330,6 +341,8 @@ public class KlijentDigitron extends JFrame {
 			button_1.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					textFieldBrojevi.setText(textFieldBrojevi.getText() + "4");
+					button_9.setEnabled(true);
+					button_11.setEnabled(true);
 				}
 			});
 			button_1.setBounds(10, 142, 45, 31);
@@ -342,6 +355,8 @@ public class KlijentDigitron extends JFrame {
 			button_2.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					textFieldBrojevi.setText(textFieldBrojevi.getText() + "1");
+					button_9.setEnabled(true);
+					button_11.setEnabled(true);
 				}
 			});
 			button_2.setBounds(10, 184, 45, 31);
@@ -354,6 +369,8 @@ public class KlijentDigitron extends JFrame {
 			button_3.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					textFieldBrojevi.setText(textFieldBrojevi.getText() + "5");
+					button_9.setEnabled(true);
+					button_11.setEnabled(true);
 				}
 			});
 			button_3.setBounds(64, 142, 45, 31);
@@ -366,6 +383,8 @@ public class KlijentDigitron extends JFrame {
 			button_4.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					textFieldBrojevi.setText(textFieldBrojevi.getText() + "2");
+					button_9.setEnabled(true);
+					button_11.setEnabled(true);
 				}
 			});
 			button_4.setBounds(64, 184, 45, 31);
@@ -378,6 +397,8 @@ public class KlijentDigitron extends JFrame {
 			button_5.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					textFieldBrojevi.setText(textFieldBrojevi.getText() + "6");
+					button_9.setEnabled(true);
+					button_11.setEnabled(true);
 				}
 			});
 			button_5.setBounds(119, 142, 45, 31);
@@ -390,6 +411,8 @@ public class KlijentDigitron extends JFrame {
 			button_6.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					textFieldBrojevi.setText(textFieldBrojevi.getText() + "9");
+					button_9.setEnabled(true);
+					button_11.setEnabled(true);
 				}
 			});
 			button_6.setBounds(119, 100, 45, 31);
@@ -402,6 +425,8 @@ public class KlijentDigitron extends JFrame {
 			button_7.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					textFieldBrojevi.setText(textFieldBrojevi.getText() + "3");
+					button_9.setEnabled(true);
+					button_11.setEnabled(true);
 				}
 			});
 			button_7.setBounds(119, 184, 45, 31);
@@ -414,6 +439,8 @@ public class KlijentDigitron extends JFrame {
 			button_8.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					textFieldBrojevi.setText(textFieldBrojevi.getText() + "0");
+					button_9.setEnabled(true);
+					button_11.setEnabled(true);
 				}
 			});
 			button_8.setBounds(10, 226, 45, 31);
@@ -423,6 +450,7 @@ public class KlijentDigitron extends JFrame {
 	private JTextField getTextFieldBrojevi() {
 		if (textFieldBrojevi == null) {
 			textFieldBrojevi = new JTextField();
+			textFieldBrojevi.setEditable(false);
 			textFieldBrojevi.setBounds(10, 265, 339, 22);
 			textFieldBrojevi.setColumns(10);
 		}
@@ -450,6 +478,8 @@ public class KlijentDigitron extends JFrame {
 			button_9.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					textFieldBrojevi.setText(textFieldBrojevi.getText() + " ");
+					button_9.setEnabled(false);
+					button_11.setEnabled(false);
 				}
 			});
 			button_9.setBounds(64, 226, 45, 31);
@@ -462,6 +492,8 @@ public class KlijentDigitron extends JFrame {
 			button_10.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					try {
+						button_9.setEnabled(false);
+						button_11.setEnabled(false);
 						if(odgovorKontrola.equals("Odobren")) {
 							podaciZaServer = textFieldBrojevi.getText();
 							kaServeruPodaci.println(podaciZaServer);
@@ -538,5 +570,19 @@ public class KlijentDigitron extends JFrame {
 			e.printStackTrace();
 		}
 		
+	}
+	private JButton getButton_11() {
+		if (button_11 == null) {
+			button_11 = new JButton(".");
+			button_11.setEnabled(false);
+			button_11.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent e) {
+					textFieldBrojevi.setText(textFieldBrojevi.getText() + ".");
+					button_9.setEnabled(false);
+				}
+			});
+			button_11.setBounds(174, 184, 45, 31);
+		}
+		return button_11;
 	}
 }
